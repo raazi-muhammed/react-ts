@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UserCardPage from "./pages/UserCardPage";
 import CounterPage from "./pages/CounterPage";
 import UserFetchFromCountPage from "./pages/UserFetchFromCountPage";
+import FormPage from "./pages/FormPage";
 
 type Links = {
     name: string;
@@ -20,6 +21,10 @@ function App() {
         {
             name: "User Fetch Counter",
             url: "/user-fetch-counter",
+        },
+        {
+            name: "Form",
+            url: "/form",
         },
     ];
 
@@ -42,6 +47,7 @@ function App() {
                         path="/user-fetch-counter"
                         element={<UserFetchFromCountPage />}
                     />
+                    <Route path="/form" element={<FormPage />} />
                 </Routes>
             </BrowserRouter>
         </div>

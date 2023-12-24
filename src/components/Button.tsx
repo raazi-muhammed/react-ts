@@ -6,7 +6,7 @@ export const Button = ({
 }: ButtonHTMLAttributes<HTMLButtonElement>): JSX.Element => {
     return (
         <button
-            className="bg-indigo-500 p-2 rounded-lg text-white m-2"
+            className="bg-indigo-500 p-2 rounded-lg text-white m-2 disabled:opacity-60"
             {...props}
         >
             {children}
