@@ -1,17 +1,38 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UserCardPage from "./pages/UserCardPage";
+import CounterPage from "./pages/CounterPage";
 
+type Links = {
+    name: string;
+    url: string;
+};
 function App() {
+    const links: Links[] = [
+        {
+            name: "User Card",
+            url: "/user-card",
+        },
+        {
+            name: "Simple Counter",
+            url: "/counter",
+        },
+    ];
+
     return (
         <div className="App">
             <nav>
-                <button>
-                    <a href="/user-card">User Card</a>
-                </button>
+                <ul className="flex gap-2">
+                    {links.map((link) => (
+                        <li className="border border-indigo-500 p-2 rounded-lg">
+                            <a href={link.url}>{link.name}</a>
+                        </li>
+                    ))}
+                </ul>
             </nav>
             <BrowserRouter>
                 <Routes>
                     <Route path="/user-card" element={<UserCardPage />} />
+                    <Route path="/counter" element={<CounterPage />} />
                 </Routes>
             </BrowserRouter>
         </div>
